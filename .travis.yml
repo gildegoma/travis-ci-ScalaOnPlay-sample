@@ -1,8 +1,8 @@
-language: JvmLanguage
+language: Scala 
 env:
   - PLAY_VERSION=2.0
 before_script: ./travis/setup
-script: ./travis/play-framework/run test
+script: ./travis/play-framework/play test
 notifications:
   # Email notifications are disabled to not annoy anybody.
   # See http://about.travis-ci.org/docs/user/build-configuration/ to learn more
