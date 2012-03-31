@@ -12,7 +12,7 @@ class FormSpec extends Specification {
   "HelloWorld form" should {
     
     "require all fields" in {
-      val form = helloForm.bind(Map.empty)
+      val form = helloForm.bind(Map.empty[String,String])
       
       form.hasErrors must beTrue
       form.errors.size must equalTo(2)
@@ -69,7 +69,6 @@ class FormSpec extends Specification {
       val form = helloForm.bind(Map("name" -> "Bob", "repeat" -> "10", "color" -> "red"))
       
       form.hasErrors must beFalse
-      
       
       form.data must havePair("color" -> "red")
       form.data must havePair("repeat" -> "10")
