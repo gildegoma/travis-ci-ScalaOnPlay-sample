@@ -6,6 +6,6 @@ PLAY_ZIP=${PLAY_PACKAGE}.zip
 PLAY_DOWNLOAD=http://download.playframework.org/releases/${PLAY_ZIP}
 
 wget ${PLAY_DOWNLOAD} 
-unzip ${PLAY_ZIP} 
+unzip -q ${PLAY_ZIP} 
 mv ${PLAY_PACKAGE} ${PLAY_HOME}
 
