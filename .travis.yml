@@ -1,0 +1,10 @@
+language: JvmLanguage
+env:
+  - PLAY_VERSION=2.0
+before_script: ./travis/setup
+script: ./travis/play-framework/run test
+notifications:
+  # Email notifications are disabled to not annoy anybody.
+  # See http://about.travis-ci.org/docs/user/build-configuration/ to learn more
+  # about configuring notification recipients and more.
+  email: false
