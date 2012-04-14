@@ -1,4 +1,4 @@
-# Hello World sample project built on Travis-CI
+# Sample project to demonstrate Travis CI and Play2 in action
 
 You can easily use Travis-CI to build your Web Applications based on Play 2.x Framework, with following steps:
 
@@ -13,7 +13,7 @@ For more general information about how to use Travis-CI, follow the guides on ht
  - Copy `.travis.yml` and `travis/setup` from this sample project to your Play2 application
  - Publish your changes to GitHub repository and enjoy continuous integration with Travis !
 
-# Original README 
+# Original README from Hello World sample
 
 copied from https://github.com/playframework/Play20/blob/master/samples/scala/helloworld/README
 
