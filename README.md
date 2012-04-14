@@ -7,6 +7,12 @@ You can easily use Travis-CI to build your Web Applications based on Play 2.x Fr
 
 For more general information about how to use Travis-CI, follow the guides on http://about.travis-ci.org/docs/
 
+## Just get it work in seconds...
+
+ - Enable Travis hook on your GitHub repository from your Travis CI profile
+ - Copy `.travis.yml` and `travis/setup` from this sample project to your Play2 application
+ - Publish your changes to GitHub repository and enjoy continuous integration with Travis !
+
 # Original README 
 
 copied from https://github.com/playframework/Play20/blob/master/samples/scala/helloworld/README
