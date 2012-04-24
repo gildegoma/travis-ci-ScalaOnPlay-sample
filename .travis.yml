@@ -1,7 +1,7 @@
 language: scala #or java => to trigger the build on a 'jvm-otp' box
 env:
   - PLAY_VERSION=2.0
-  - PLAY_VERSION=2.0.1
+  # - PLAY_VERSION=2.???
 before_script: ./travis/setup
 script: ./travis/play-framework/play test
 notifications:
