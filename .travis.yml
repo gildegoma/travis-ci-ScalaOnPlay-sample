@@ -1,9 +1,5 @@
-language: scala #or java => to trigger the build on a 'jvm-otp' box
-env:
-  - PLAY_VERSION=2.0
-  # - PLAY_VERSION=2.???
-before_script: ./travis/setup
-script: ./travis/play-framework/play test
+language: java # to trigger the build on a 'jvm-otp' box
+script: sbt test
 notifications:
   # Email notifications are disabled to not annoy anybody.
   # See http://about.travis-ci.org/docs/user/build-configuration/ to learn more
