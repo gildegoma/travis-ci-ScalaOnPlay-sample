@@ -1,4 +1,4 @@
-language: scala # or java => to trigger the build on a 'jvm-otp' box
+language: java # to trigger the build on a 'jvm-otp' travis worker
 env:
   - PLAY_VERSION=2.0
 before_script: 
