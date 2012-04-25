@@ -1,11 +1,6 @@
 # Sample project to demonstrate Travis CI and Play2 in action
 
-You can easily use Travis-CI to build your Web Applications based on Play 2.x Framework, with following steps:
-
- - instruct the download and setup of the release(s) of Play you want to run with in a custom script called by `before_script` in .travis.yml
- - call `path/to/play-framework/play test` with `script` definition in .travis.yml
-
-For more general information about how to use Travis-CI, follow the guides on http://about.travis-ci.org/docs/
+In this example, Play2 framework will be installed and used as sbt/ivy dependency
 
 ## Just get it work in seconds...
 
