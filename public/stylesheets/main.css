@@ -1,75 +1,65 @@
-html, body {
-    padding: 0;
-    margin: 0;
-    font-family: Helvetica, Arial;
-    color: #3A4244;
+html {
+    background: #eee;
 }
 
-header {
-    padding: 10px 30px;
-    background: #CAE7EC;
+header h1 {
+    padding: 0.4em 1.1em;
+    color: white;
+    font-weight: normal;
     font-size: 24px;
 }
 
-header a {
-    color: #1A1E20;
-    text-decoration: none;
+section#main {
+    position: relative;
+    padding: 5em 2em;
+    border-bottom: 1px solid #ccc;
+    min-height: 600px;
+} 
+
+section#main .topRight {
+    position: absolute;
+    right: 20px;
+    top: 70px;
 }
 
-section {
-    padding: 10px 30px;
+table.computers em {
+    color: #aaa;
 }
 
-#helloform dd {
-    display: inline-block;
+table.computers .col3, table.computers .col4 {
+    width: 10%;
+    min-width: 100px;
 }
 
-#helloform dd.info {
-    display: none;
+table.computers .col5 {
+    width: 30%;
+    min-width: 300px;
 }
 
-#helloform dd.error {
-    margin-left: 10px;
-    font-size: 12px;
-    color: #c00;
+table.computers .header a {
 }
 
-#helloform label {
-    font-size: 14px;
+#actions {
+    position: relative;
 }
 
-#helloform dl {
-    background: #FAFAFA;
-    padding: 10px;
+#actions #add {
+    position: absolute;
+    right: 0;
+    top: 0;
 }
 
-#helloform dl.error {
-    background: #FBDDE6;
+#pagination {
+    position: relative;
 }
 
-#helloform dt {
-    display: inline-block;
-    width: 160px;
+#pagination ul {
+    position: absolute;
+    right: 0;
 }
 
-.buttons {
-    background: #536565;
-    padding: 10px;
-    margin-top: 30px;
+#pagination ul .current a {
+    color: #666;
 }
 
-.buttons input, .buttons a {
-    border: 1px solid #2F3A3A;
-    background: #fff;
-    font-size: 12px;
-    cursor: pointer;
-    display: inline-block;
-    padding: 5px 10px;
-    text-decoration: none;
-    color: #000;
-}
-
-ul {
-    padding-left: 20px;
-}
 

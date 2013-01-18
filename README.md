@@ -14,14 +14,14 @@ For more general information about how to use Travis-CI, follow the guides on ht
  - Publish your changes to GitHub repository and enjoy continuous integration with Travis !
  - Show the build status in your README.md: [![Build Status](https://travis-ci.org/gildegoma/travis-ci-ScalaOnPlay-sample.png?branch=master)](https://travis-ci.org/gildegoma/travis-ci-ScalaOnPlay-sample)
 
-# Original README from Hello World sample
+# Original README from Computer-Database sample
 
-copied from https://github.com/playframework/Play20/blob/master/samples/scala/helloworld/README
+copied from https://github.com/playframework/Play20/blob/master/samples/scala/computer-database/README
 
-This is a very basic application that demonstrates Play 2.0 fundamentals:
+This is a classic CRUD application, backed by a JDBC database. It demonstrates:
 
- - Writing controllers and actions.
- - Routing and reverse routing.
- - Linking to public assets.
- - Using the template engine.
- - Handling forms with validation.
+- Accessing a JDBC database, using Anorm.
+- Achieving, table pagination and CRUD forms.
+- Integrating with a CSS framework (Twitter Bootstrap ).
+
+Twitter Bootstrap requires a different form layout to the default one that the Play 2.0 form helper generates, so this application also provides an example of integrating a custom form input constructor.

@@ -5,6 +5,8 @@ import org.specs2.mutable._
 import play.api.test._
 import play.api.test.Helpers._
 
+import org.fluentlenium.core.filter.FilterConstructor._
+
 class IntegrationSpec extends Specification {
   
   "Application" should {
@@ -13,50 +15,48 @@ class IntegrationSpec extends Specification {
       running(TestServer(3333), HTMLUNIT) { browser =>
         browser.goTo("http://localhost:3333/")
         
-        browser.waitUntil[Boolean]{
-          browser.pageSource contains ("Hello world")
-        }
+        browser.$("header h1").first.getText must equalTo("Play 2.0 sample application — Computer database")
+        browser.$("section h1").first.getText must equalTo("574 computers found")
+        
+        browser.$("#pagination li.current").first.getText must equalTo("Displaying 1 to 10 of 574")
+        
+        browser.$("#pagination li.next a").click()
+        
+        browser.$("#pagination li.current").first.getText must equalTo("Displaying 11 to 20 of 574")
+        browser.$("#searchbox").text("Apple")
+        browser.$("#searchsubmit").click()
+        
+        browser.$("section h1").first.getText must equalTo("13 computers found")
+        browser.$("a", withText("Apple II")).click()
+        
+        browser.$("section h1").first.getText must equalTo("Edit computer")
+        
+        browser.$("#discontinued").text("xxx")
+        browser.$("input.primary").click()
 
-        browser.$("h1").first.getText.contains("Configure your 'Hello world':")
+        browser.$("div.error").size must equalTo(1)
+        browser.$("div.error label").first.getText must equalTo("Discontinued date")
+        
+        browser.$("#discontinued").text("")
+        browser.$("input.primary").click()
+        
+        browser.$("section h1").first.getText must equalTo("574 computers found")
+        browser.$(".alert-message").first.getText must equalTo("Done! Computer Apple II has been updated")
+        
+        browser.$("#searchbox").text("Apple")
+        browser.$("#searchsubmit").click()
+        
+        browser.$("a", withText("Apple II")).click()
+        browser.$("input.danger").click()
 
-        browser.$("#name").text("Bob")
-        browser.$("#submit").click()
+        browser.$("section h1").first.getText must equalTo("573 computers found")
+        browser.$(".alert-message").first.getText must equalTo("Done! Computer has been deleted")
         
-        browser.$("dl.error").size must equalTo(1)
-        browser.$("dl#repeat_field dd.error").first.getText must equalTo("Numeric value expected")
-        browser.$("#name").first.getValue must equalTo("Bob")
+        browser.$("#searchbox").text("Apple")
+        browser.$("#searchsubmit").click()
         
-        browser.$("#repeat").text("xxx")
-        browser.$("#submit").click()
-        
-        browser.$("dl.error").size must equalTo(1)
-        browser.$("dl#repeat_field dd.error").first.getText must equalTo("Numeric value expected")
-        browser.$("#name").first.getValue must equalTo("Bob")
-        browser.$("#repeat").first.getValue must equalTo("xxx")
-        
-        browser.$("#name").text("")
-        browser.$("#submit").click()
-        
-        browser.$("dl.error").size must equalTo(2)
-        browser.$("dl#name_field dd.error").first.getText must equalTo("This field is required")
-        browser.$("dl#repeat_field dd.error").first.getText must equalTo("Numeric value expected")
-        browser.$("#name").first.getValue must equalTo("")
-        browser.$("#repeat").first.getValue must equalTo("xxx")
-        
-        browser.$("#name").text("Bob")
-        browser.$("#repeat").text("10")
-        browser.$("#submit").click()
-        
-        browser.$("header a").first.getText must equalTo("Here is the result:")
-        
-        val items = browser.$("section ul li")
-        
-        items.size must equalTo(10)
-        items.get(0).getText must equalTo("Hello Bob!")
-        
-        browser.$("p.buttons a").click()
-        
-        browser.$("h1").first.getText must equalTo("Configure your 'Hello world':")
+        browser.$("section h1").first.getText must equalTo("12 computers found")
+
       }
     }
     
