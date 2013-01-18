@@ -2,7 +2,8 @@
 
 # --- !Ups
 
-set ignorecase true;
+-- line below disabled for integration with postgresql
+-- set ignorecase true;
 
 create table company (
   id                        bigint not null,
