@@ -10,9 +10,10 @@ For more general information about how to use Travis-CI, follow the guides on ht
 ## Just get it work in seconds...
 
  - Enable Travis hook on your GitHub repository from your Travis CI profile
- - Copy `.travis.yml` from this sample project to your Play2 application, and update it to refer to required version(s) of Play 2.x, maybe start a database service for your tests,...
+ - Copy `.travis.yml` from this sample project to your Play2 application, and update it to refer to required version(s) of Play 2.x
+ - Configure the database dependency. The example here uses PostgreSQL, see related changes in commit 418d65d06f64aef15e114e87c64584a82a103069
  - Publish your changes to GitHub repository and enjoy continuous integration with Travis !
- - Show the build status in your README.md: [![Build Status](https://travis-ci.org/gildegoma/travis-ci-ScalaOnPlay-sample.png?branch=master)](https://travis-ci.org/gildegoma/travis-ci-ScalaOnPlay-sample)
+ - Show the build status in your README.md: [![Build Status](https://travis-ci.org/gildegoma/travis-ci-ScalaOnPlay-sample.png?branch=database-integration)](https://travis-ci.org/gildegoma/travis-ci-ScalaOnPlay-sample)
 
 # Original README from Computer-Database sample
 
