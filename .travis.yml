@@ -1,6 +1,5 @@
-language: java # to trigger the build on a 'jvm-otp' travis worker
+language: scala # to trigger the build on JVM worker ('language: java' works the same)
 env:
-  - PLAY_VERSION=2.0.4   # Latest 2.0.x
   - PLAY_VERSION=2.1-RC2 # Latest 2.1.x
 before_script: 
   - wget http://download.playframework.org/releases/play-${PLAY_VERSION}.zip
